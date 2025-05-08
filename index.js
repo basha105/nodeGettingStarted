@@ -1,3 +1,43 @@
+const express = require('express');
+const app = express();
+
+app.get("/", (req, res) => {
+    res.sendFile('index.html', err => {
+        if (err) {
+            console.error('Error');
+            res.status(err.status).end();
+        } else {
+            console.log('Sent index.html');
+        }
+    })
+})
+
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log("multi page app running!");
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 const http = require('http');
 const url = require('url');
 const fs = require('fs');
@@ -30,3 +70,4 @@ http.createServer(function (req, res) {
 
     
 }).listen(8080);
+*/
